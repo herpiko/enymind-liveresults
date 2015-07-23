@@ -1,0 +1,66 @@
+<h3>{{selectedRaceTitle}}</h3>
+<p ng-show="failed">Could get information. <a href="" ng-click="fetch()">Click to reload</a></p>
+<div class="sk-circle" ng-show="spinner">
+  <div class="sk-circle1 sk-child"></div>
+  <div class="sk-circle2 sk-child"></div>
+  <div class="sk-circle3 sk-child"></div>
+  <div class="sk-circle4 sk-child"></div>
+  <div class="sk-circle5 sk-child"></div>
+  <div class="sk-circle6 sk-child"></div>
+  <div class="sk-circle7 sk-child"></div>
+  <div class="sk-circle8 sk-child"></div>
+  <div class="sk-circle9 sk-child"></div>
+  <div class="sk-circle10 sk-child"></div>
+  <div class="sk-circle11 sk-child"></div>
+  <div class="sk-circle12 sk-child"></div>
+</div>
+<div class="bs-example table-responsive" id="tableContainer" ng-hide="spinner">
+  <table class="table table-striped table-hover" id="resultTable">
+    <thead style="font-weight:bold !important" ng-show="finish">
+            <td>Number</td>
+            <td>Name</td>
+            <td>Club</td>
+            <td>Class</td>
+            <td>Bike</td>
+            <td>Total Time</td>
+            <td>Run routes</td>
+            <td>Gap</td>
+            <td>Diff</td>
+    </thead>
+    <thead style="font-weight:bold !important" ng-hide="finish">
+            <td>Number</td>
+            <td>Name</td>
+            <td>Club</td>
+            <td>Class</td>
+            <td>Bike</td>
+            <td>Total Lap</td>
+            <td>Best Lap</td>
+            <td>In Lap</td>
+    </thead>
+    <tbody ng-show="finish">
+      <tr ng-repeat="result in results">
+              <td>{{result[0]}}</td>
+              <td>{{result[1]}}</td>
+              <td>{{result[2]}}</td>
+              <td>{{result[3]}}</td>
+              <td>{{result[8]}}</td>
+              <td>{{result[4]}}</td>
+              <td>{{result[5]}}</td>
+              <td>{{result[6]}}</td>
+              <td>{{result[7]}}</td>
+      </tr>
+    </tbody>
+    <tbody ng-hide="finish">
+      <tr ng-repeat="result in results">
+              <td>{{result[0]}}</td>
+              <td>{{result[1]}}</td>
+              <td>{{result[2]}}</td>
+              <td>{{result[3]}}</td>
+              <td>{{result[8]}}</td>
+              <td>{{result[4]}}</td>
+              <td>{{result[5]}}</td>
+              <td>{{result[6]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
