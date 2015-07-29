@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.events',
   'myApp.race',
-  'myApp.version'
+  'myApp.version',
+  'angularMoment'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/events'});

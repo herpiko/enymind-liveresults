@@ -1,3 +1,4 @@
+var updateInterval = 30;
 'use strict';
 
 angular.module('myApp.events', ['ngRoute'])
@@ -19,10 +20,14 @@ angular.module('myApp.events', ['ngRoute'])
     })
       .success(function(data, status, headers){
         console.log("success");
-        console.log(data);
+        /* console.log(data); */
         $rootScope.races = data.reverse();
+        angular.forEach($rootScope.races, function(value, key) {
+          console.log(value);
+          value[2] = moment(value[2]);
+          console.log(key);
+        })
         $scope.spinner = false;
-        /*     url :"http://" + settings.subdomain + ".live.enymind.com/live/ajax.php?cid=" + data[i][0], */
       })
       .error(function(data, status, headers){
         console.log("failed");
@@ -36,6 +41,7 @@ angular.module('myApp.events', ['ngRoute'])
 
   $rootScope.detail = function(race) {
     $rootScope.selectedRaceTitle = race[1];
+    $rootScope.selectedRaceDate = race[2];
     $location.url("/race/" + race[0]);
   }
 }]);

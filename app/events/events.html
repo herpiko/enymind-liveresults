@@ -16,5 +16,5 @@
   <div class="sk-circle11 sk-child"></div>
   <div class="sk-circle12 sk-child"></div>
 </div>
-<button ng-hide="spinner" class="btn btn-success btn-lg btn-block" ng-click="detail(race)" style="cursor:pointer !important"  ng-repeat="race in races">{{race[1]}}</button>
+<button ng-hide="spinner" class="btn btn-success btn-lg btn-block" ng-click="detail(race)" style="cursor:pointer !important"  ng-repeat="race in races">{{race[1]}}, {{race[2] | amDateFormat:'MMMM Do YYYY'}}</button>
 </div>
